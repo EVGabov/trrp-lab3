@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+service Calculator {
+    rpc Calculate(CalculateMessage) returns (CalculatedMessage) {}
+}
+
+message CalculateMessage {
+    string Operation = 1;
+    double Operand1 = 2;
+    double Operand2 = 3;
+}
+
+message CalculatedMessage {
+    double result = 1;
+}
+
+enum Operation {
+    MUL = 0;
+    DIV = 1;
+    SUB = 2;
+    SUM = 3;
+}
